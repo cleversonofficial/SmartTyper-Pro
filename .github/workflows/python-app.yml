@@ -35,9 +35,17 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     
+    - name: Setup Xvfb for GUI testing
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xvfb
+    
     - name: Test with pytest
       run: |
-        pytest tests/ --cov=SmartTyper_Pro --cov-report=xml
+        export DISPLAY=:99
+        xvfb-run -a pytest tests/ --cov=SmartTyper_Pro --cov-report=xml
+      env:
+        DISPLAY: :99
     
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3

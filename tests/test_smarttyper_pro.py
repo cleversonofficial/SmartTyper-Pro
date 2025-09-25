@@ -8,6 +8,9 @@ import os
 # Adiciona o diretório raiz ao path para importar o módulo
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..'))
 
+# Configuração para ambiente headless
+os.environ.setdefault('DISPLAY', ':99')
+
 try:
     from SmartTyper_Pro import AutoTyperApp
 except ImportError:
