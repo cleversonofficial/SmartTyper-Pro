@@ -9,9 +9,20 @@
 
 **Automação Inteligente de Digitação com Interface Moderna**
 
-[![GitHub stars](https://img.shields.io/github/stars/cleversonofficial/SmartTyper-Pro?style=social)](https://github.com/cleversonofficial/SmartTyper-Pro/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/cleversonofficial/SmartTyper-Pro?style=social)](https://github.com/cleversonofficial/SmartTyper-Pro/network)
-[![GitHub issues](https://img.shields.io/github/issues/cleversonofficial/SmartTyper-Pro)](https://github.com/cleversonofficial/SmartTyper-Pro/issues)
+## 📊 **Estatísticas do Projeto**
+
+<div align="center">
+
+[![GitHub stars](https://img.shields.io/github/stars/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/network)
+[![GitHub issues](https://img.shields.io/github/issues/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/issues)
+[![GitHub watchers](https://img.shields.io/github/watchers/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/watchers)
+
+[![GitHub last commit](https://img.shields.io/github/last-commit/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=git&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/commits/main)
+[![GitHub repo size](https://img.shields.io/github/repo-size/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro)
+[![GitHub language count](https://img.shields.io/github/languages/count/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro)
+
+</div>
 
 </div>
 
@@ -259,6 +270,37 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 - Desenvolvedores do PyAutoGUI
 - Contribuidores do projeto
 - Usuários que reportam bugs e sugerem melhorias
+
+---
+
+## 📈 **Acompanhe o Projeto**
+
+<div align="center">
+
+### 🔔 **Receba Notificações**
+Para acompanhar atualizações e uso do projeto:
+
+[![Watch](https://img.shields.io/github/watchers/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/subscription)
+[![GitHub Release](https://img.shields.io/github/v/release/cleversonofficial/SmartTyper-Pro?style=for-the-badge&logo=github&logoColor=white)](https://github.com/cleversonofficial/SmartTyper-Pro/releases)
+
+### 📊 **Estatísticas em Tempo Real**
+
+| Métrica | Status |
+|---------|--------|
+| ⭐ Stars | [![GitHub stars](https://img.shields.io/github/stars/cleversonofficial/SmartTyper-Pro?style=flat-square)](https://github.com/cleversonofficial/SmartTyper-Pro/stargazers) |
+| 🍴 Forks | [![GitHub forks](https://img.shields.io/github/forks/cleversonofficial/SmartTyper-Pro?style=flat-square)](https://github.com/cleversonofficial/SmartTyper-Pro/network) |
+| 👀 Watchers | [![GitHub watchers](https://img.shields.io/github/watchers/cleversonofficial/SmartTyper-Pro?style=flat-square)](https://github.com/cleversonofficial/SmartTyper-Pro/watchers) |
+| 🐛 Issues | [![GitHub issues](https://img.shields.io/github/issues/cleversonofficial/SmartTyper-Pro?style=flat-square)](https://github.com/cleversonofficial/SmartTyper-Pro/issues) |
+| 🔄 Pull Requests | [![GitHub pull requests](https://img.shields.io/github/issues-pr/cleversonofficial/SmartTyper-Pro?style=flat-square)](https://github.com/cleversonofficial/SmartTyper-Pro/pulls) |
+
+### 🚀 **Como Acompanhar o Uso**
+
+1. **⭐ Dê uma estrela** se gostou do projeto
+2. **🍴 Faça fork** se quiser contribuir
+3. **👀 Watch** o repositório para receber notificações
+4. **🐛 Reporte bugs** ou **💡 sugira melhorias**
+
+</div>
 
 ---
 
