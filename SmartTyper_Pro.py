@@ -13,7 +13,7 @@ import math
 class AutoTyperApp:
     def __init__(self, root):
         self.root = root
-        self.root.title("⚡ SmartTyper Pro - Automação Inteligente de Digitação")
+        self.root.title("⚡ SmartTyper Pro - Sua Automação de Digitação")
         self.root.geometry("600x700")
         self.root.resizable(True, True)
         
@@ -207,7 +207,7 @@ class AutoTyperApp:
             try:
                 with open(filepath, 'w', encoding='utf-8') as f:
                     f.write(text)
-                self.status_label.config(text=f"Texto salvo: {filename}")
+                self.status_label.config(text=f"Texto guardado com carinho: {filename} 💾")
             except Exception as e:
                 messagebox.showerror("Erro", f"Erro ao salvar: {str(e)}")
 
@@ -315,15 +315,15 @@ class AutoTyperApp:
         
         # Aba principal - Digitação
         main_tab = ttk.Frame(notebook)
-        notebook.add(main_tab, text="Digitação")
+        notebook.add(main_tab, text="✍️ Digitar")
         
         # Aba configurações
         config_tab = ttk.Frame(notebook)
-        notebook.add(config_tab, text="Configurações")
+        notebook.add(config_tab, text="⚙️ Ajustes")
         
         # Aba histórico
         history_tab = ttk.Frame(notebook)
-        notebook.add(history_tab, text="Histórico")
+        notebook.add(history_tab, text="📚 Histórico")
         
         # Criar conteúdo das abas
         self.create_main_tab(main_tab)
@@ -348,7 +348,7 @@ class AutoTyperApp:
         """Cria conteúdo da aba principal"""
         
         # Frame para texto
-        text_frame = ttk.LabelFrame(parent, text="Texto para Digitar", padding="10")
+        text_frame = ttk.LabelFrame(parent, text="O que você quer digitar? 😊", padding="10")
         text_frame.pack(fill="both", expand=True, pady=(0, 10))
         
         # Contador de caracteres
@@ -379,7 +379,7 @@ class AutoTyperApp:
         ttk.Button(file_frame, text="Limpar", command=self.clear_text).pack(side="left")
         
         # Frame de configurações rápidas
-        quick_config_frame = ttk.LabelFrame(parent, text="Configurações Rápidas", padding="10")
+        quick_config_frame = ttk.LabelFrame(parent, text="Configurações do seu jeito ⚙️", padding="10")
         quick_config_frame.pack(fill="x", pady=(0, 10))
         
         # Configurações em grid
@@ -387,13 +387,13 @@ class AutoTyperApp:
         config_grid.pack(fill="x")
         
         # Tempo de início
-        ttk.Label(config_grid, text="Tempo para iniciar (segundos):").grid(row=0, column=0, sticky="w", padx=(0, 10))
+        ttk.Label(config_grid, text="Esperar quanto tempo antes de começar?").grid(row=0, column=0, sticky="w", padx=(0, 10))
         self.start_delay_var = tk.StringVar(value=str(self.config['start_delay']))
         self.start_delay_entry = ttk.Entry(config_grid, textvariable=self.start_delay_var, width=10)
         self.start_delay_entry.grid(row=0, column=1, padx=(0, 20))
         
         # Intervalo entre caracteres
-        ttk.Label(config_grid, text="Intervalo entre teclas (segundos):").grid(row=0, column=2, sticky="w", padx=(0, 10))
+        ttk.Label(config_grid, text="Quanto tempo entre cada letra?").grid(row=0, column=2, sticky="w", padx=(0, 10))
         self.char_interval_var = tk.StringVar(value=str(self.config['char_interval']))
         self.char_interval_entry = ttk.Entry(config_grid, textvariable=self.char_interval_var, width=10)
         self.char_interval_entry.grid(row=0, column=3)
@@ -407,23 +407,23 @@ class AutoTyperApp:
         
         # Modo de teste
         self.test_mode_var = tk.BooleanVar(value=self.config.get('test_mode', False))
-        test_check = ttk.Checkbutton(config_grid, text="Modo Teste", variable=self.test_mode_var)
+        test_check = ttk.Checkbutton(config_grid, text="Testar sem digitar de verdade", variable=self.test_mode_var)
         test_check.grid(row=1, column=2, padx=(0, 20), pady=(10, 0))
         
         # Backup automático
         self.auto_backup_var = tk.BooleanVar(value=self.config.get('auto_backup', True))
-        backup_check = ttk.Checkbutton(config_grid, text="Backup Auto", variable=self.auto_backup_var)
+        backup_check = ttk.Checkbutton(config_grid, text="Salvar automaticamente", variable=self.auto_backup_var)
         backup_check.grid(row=1, column=3, pady=(10, 0))
         
         # Botões de controle
         control_frame = ttk.Frame(parent)
         control_frame.pack(fill="x", pady=(0, 10))
         
-        self.start_button = ttk.Button(control_frame, text="🚀 INICIAR DIGITAÇÃO", 
+        self.start_button = ttk.Button(control_frame, text="🚀 Vamos começar!", 
                                       style='Success.TButton', command=self.start_typing_thread)
         self.start_button.pack(side="left", padx=(0, 10), fill="x", expand=True)
         
-        self.stop_button = ttk.Button(control_frame, text="⏹️ PARAR", 
+        self.stop_button = ttk.Button(control_frame, text="⏹️ Parar tudo", 
                                      style='Danger.TButton', command=self.stop_typing_action,
                                      state="disabled")
         self.stop_button.pack(side="left", fill="x", expand=True)
@@ -432,9 +432,9 @@ class AutoTyperApp:
         extra_frame = ttk.Frame(parent)
         extra_frame.pack(fill="x", pady=(0, 10))
         
-        ttk.Button(extra_frame, text="💾 Salvar", command=self.save_text).pack(side="left", padx=(0, 5))
-        ttk.Button(extra_frame, text="🌙 Tema", command=self.toggle_theme).pack(side="left", padx=(0, 5))
-        ttk.Button(extra_frame, text="📊 Stats", command=self.show_stats).pack(side="left")
+        ttk.Button(extra_frame, text="💾 Guardar texto", command=self.save_text).pack(side="left", padx=(0, 5))
+        ttk.Button(extra_frame, text="🌙 Mudar visual", command=self.toggle_theme).pack(side="left", padx=(0, 5))
+        ttk.Button(extra_frame, text="📊 Ver como fui", command=self.show_stats).pack(side="left")
         
         # Barra de progresso
         self.progress_var = tk.DoubleVar()
@@ -446,43 +446,43 @@ class AutoTyperApp:
         warning_frame = ttk.Frame(parent)
         warning_frame.pack(fill="x")
         
-        warning_text = "⚠️ AVISO: Certifique-se de posicionar o cursor no local correto antes de iniciar!"
-        ttk.Label(warning_frame, text=warning_text, foreground="red", 
+        warning_text = "💡 Dica: Coloque o cursor onde quer que apareça o texto!"
+        ttk.Label(warning_frame, text=warning_text, foreground="orange", 
                  font=("Segoe UI", 9)).pack()
 
     def create_config_tab(self, parent):
         """Cria aba de configurações avançadas"""
         
         # Configurações de segurança
-        security_frame = ttk.LabelFrame(parent, text="Configurações de Segurança", padding="10")
+        security_frame = ttk.LabelFrame(parent, text="Segurança e Proteção 🛡️", padding="10")
         security_frame.pack(fill="x", pady=(0, 10))
         
         self.failsafe_var = tk.BooleanVar(value=True)
-        ttk.Checkbutton(security_frame, text="Ativar Fail-Safe (mover mouse para canto superior esquerdo para parar)",
+        ttk.Checkbutton(security_frame, text="Ativar parada de emergência (mover mouse para canto superior esquerdo)",
                        variable=self.failsafe_var).pack(anchor="w")
         
         # Configurações de digitação
-        typing_frame = ttk.LabelFrame(parent, text="Configurações de Digitação", padding="10")
+        typing_frame = ttk.LabelFrame(parent, text="Como Digitar Melhor ⌨️", padding="10")
         typing_frame.pack(fill="x", pady=(0, 10))
         
         # Validação de entrada
         validation_frame = ttk.Frame(typing_frame)
         validation_frame.pack(fill="x")
         
-        ttk.Label(validation_frame, text="Validação de entrada:").pack(anchor="w")
+        ttk.Label(validation_frame, text="Verificações de segurança:").pack(anchor="w")
         self.validate_input_var = tk.BooleanVar(value=True)
-        ttk.Checkbutton(validation_frame, text="Validar caracteres especiais",
+        ttk.Checkbutton(validation_frame, text="Verificar caracteres especiais",
                        variable=self.validate_input_var).pack(anchor="w")
         
         # Botão salvar configurações
-        ttk.Button(parent, text="💾 Salvar Configurações", 
+        ttk.Button(parent, text="💾 Guardar Preferências", 
                   command=self.save_config).pack(pady=10)
 
     def create_history_tab(self, parent):
         """Cria aba de histórico de textos"""
         
         # Lista de textos anteriores
-        history_frame = ttk.LabelFrame(parent, text="Textos Anteriores", padding="10")
+        history_frame = ttk.LabelFrame(parent, text="Seus Textos Salvos 📚", padding="10")
         history_frame.pack(fill="both", expand=True, pady=(0, 10))
         
         # Listbox com scrollbar
@@ -500,9 +500,9 @@ class AutoTyperApp:
         history_buttons = ttk.Frame(history_frame)
         history_buttons.pack(fill="x", pady=(10, 0))
         
-        ttk.Button(history_buttons, text="Carregar Selecionado", 
+        ttk.Button(history_buttons, text="Usar este texto", 
                   command=self.load_from_history).pack(side="left", padx=(0, 5))
-        ttk.Button(history_buttons, text="Remover Selecionado", 
+        ttk.Button(history_buttons, text="Apagar este texto", 
                   command=self.remove_from_history).pack(side="left")
         
         # Atualizar lista do histórico
@@ -511,14 +511,14 @@ class AutoTyperApp:
     def create_templates_tab(self, notebook):
         """Cria aba de templates de texto"""
         templates_tab = ttk.Frame(notebook)
-        notebook.add(templates_tab, text="📝 Templates")
+        notebook.add(templates_tab, text="📝 Modelos")
         
         # Frame principal
         main_frame = ttk.Frame(templates_tab, padding="10")
         main_frame.pack(fill="both", expand=True)
         
         # Categorias
-        categories_frame = ttk.LabelFrame(main_frame, text="Categorias", padding="10")
+        categories_frame = ttk.LabelFrame(main_frame, text="Escolha uma categoria 📂", padding="10")
         categories_frame.pack(fill="x", pady=(0, 10))
         
         self.template_category_var = tk.StringVar(value="Profissional")
@@ -528,7 +528,7 @@ class AutoTyperApp:
         category_combo.bind('<<ComboboxSelected>>', self.update_template_list)
         
         # Lista de templates
-        templates_frame = ttk.LabelFrame(main_frame, text="Templates Disponíveis", padding="10")
+        templates_frame = ttk.LabelFrame(main_frame, text="Modelos Prontos 📄", padding="10")
         templates_frame.pack(fill="both", expand=True, pady=(0, 10))
         
         # Listbox com scrollbar
@@ -546,9 +546,9 @@ class AutoTyperApp:
         template_buttons = ttk.Frame(templates_frame)
         template_buttons.pack(fill="x", pady=(10, 0))
         
-        ttk.Button(template_buttons, text="Usar Template", 
+        ttk.Button(template_buttons, text="Usar este modelo", 
                   command=self.use_template).pack(side="left", padx=(0, 5))
-        ttk.Button(template_buttons, text="Preview", 
+        ttk.Button(template_buttons, text="Ver como fica", 
                   command=self.preview_template).pack(side="left")
         
         # Atualizar lista inicial
@@ -557,14 +557,14 @@ class AutoTyperApp:
     def create_stats_tab(self, notebook):
         """Cria aba de estatísticas"""
         stats_tab = ttk.Frame(notebook)
-        notebook.add(stats_tab, text="📊 Estatísticas")
+        notebook.add(stats_tab, text="📈 Como fui")
         
         # Frame principal
         main_frame = ttk.Frame(stats_tab, padding="20")
         main_frame.pack(fill="both", expand=True)
         
         # Estatísticas principais
-        stats_frame = ttk.LabelFrame(main_frame, text="Estatísticas Gerais", padding="15")
+        stats_frame = ttk.LabelFrame(main_frame, text="Suas Conquistas 🏆", padding="15")
         stats_frame.pack(fill="x", pady=(0, 20))
         
         # Grid de estatísticas
@@ -572,28 +572,28 @@ class AutoTyperApp:
         stats_grid.pack(fill="x")
         
         # Sessões totais
-        ttk.Label(stats_grid, text="📈 Sessões Totais:", font=("Segoe UI", 10, "bold")).grid(row=0, column=0, sticky="w", padx=(0, 20))
+        ttk.Label(stats_grid, text="📈 Vezes que você usou:", font=("Segoe UI", 10, "bold")).grid(row=0, column=0, sticky="w", padx=(0, 20))
         self.total_sessions_label = ttk.Label(stats_grid, text=str(self.typing_stats['total_sessions']), font=("Consolas", 12))
         self.total_sessions_label.grid(row=0, column=1, sticky="w")
         
         # Caracteres totais
-        ttk.Label(stats_grid, text="⌨️ Caracteres Digitados:", font=("Segoe UI", 10, "bold")).grid(row=1, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
+        ttk.Label(stats_grid, text="⌨️ Letras que você digitou:", font=("Segoe UI", 10, "bold")).grid(row=1, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
         self.total_chars_label = ttk.Label(stats_grid, text=f"{self.typing_stats['total_characters']:,}", font=("Consolas", 12))
         self.total_chars_label.grid(row=1, column=1, sticky="w", pady=(10, 0))
         
         # Tempo total
-        ttk.Label(stats_grid, text="⏱️ Tempo Total:", font=("Segoe UI", 10, "bold")).grid(row=2, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
+        ttk.Label(stats_grid, text="⏱️ Tempo total digitando:", font=("Segoe UI", 10, "bold")).grid(row=2, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
         self.total_time_label = ttk.Label(stats_grid, text=self.format_time(self.typing_stats['total_time']), font=("Consolas", 12))
         self.total_time_label.grid(row=2, column=1, sticky="w", pady=(10, 0))
         
         # Velocidade média
-        ttk.Label(stats_grid, text="🚀 Velocidade Média:", font=("Segoe UI", 10, "bold")).grid(row=3, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
-        self.avg_speed_label = ttk.Label(stats_grid, text=f"{self.typing_stats['average_speed']:.1f} CPM", font=("Consolas", 12))
+        ttk.Label(stats_grid, text="🚀 Você digita em média:", font=("Segoe UI", 10, "bold")).grid(row=3, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
+        self.avg_speed_label = ttk.Label(stats_grid, text=f"{self.typing_stats['average_speed']:.1f} letras por minuto", font=("Consolas", 12))
         self.avg_speed_label.grid(row=3, column=1, sticky="w", pady=(10, 0))
         
         # Melhor velocidade
-        ttk.Label(stats_grid, text="🏆 Melhor Velocidade:", font=("Segoe UI", 10, "bold")).grid(row=4, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
-        self.best_speed_label = ttk.Label(stats_grid, text=f"{self.typing_stats['best_speed']:.1f} CPM", font=("Consolas", 12))
+        ttk.Label(stats_grid, text="🏆 Seu recorde pessoal:", font=("Segoe UI", 10, "bold")).grid(row=4, column=0, sticky="w", padx=(0, 20), pady=(10, 0))
+        self.best_speed_label = ttk.Label(stats_grid, text=f"{self.typing_stats['best_speed']:.1f} letras por minuto", font=("Consolas", 12))
         self.best_speed_label.grid(row=4, column=1, sticky="w", pady=(10, 0))
         
         # Botões de ação
@@ -601,8 +601,8 @@ class AutoTyperApp:
         action_frame.pack(fill="x")
         
         ttk.Button(action_frame, text="🔄 Atualizar", command=self.refresh_stats).pack(side="left", padx=(0, 10))
-        ttk.Button(action_frame, text="📊 Gráfico", command=self.show_chart).pack(side="left", padx=(0, 10))
-        ttk.Button(action_frame, text="🗑️ Limpar", command=self.clear_stats).pack(side="left")
+        ttk.Button(action_frame, text="📊 Ver gráfico", command=self.show_chart).pack(side="left", padx=(0, 10))
+        ttk.Button(action_frame, text="🗑️ Apagar tudo", command=self.clear_stats).pack(side="left")
 
     def update_template_list(self, event=None):
         """Atualiza lista de templates baseada na categoria selecionada"""
@@ -625,7 +625,7 @@ class AutoTyperApp:
             self.text_area.delete("1.0", tk.END)
             self.text_area.insert("1.0", template_text)
             self.update_char_count()
-            self.status_label.config(text=f"Template '{template_name}' carregado")
+            self.status_label.config(text=f"Modelo '{template_name}' pronto para usar! 😊")
 
     def preview_template(self):
         """Mostra preview do template"""
@@ -637,7 +637,7 @@ class AutoTyperApp:
             
             # Janela de preview
             preview_window = tk.Toplevel(self.root)
-            preview_window.title(f"Preview: {template_name}")
+            preview_window.title(f"Como fica: {template_name}")
             preview_window.geometry("600x400")
             
             # Área de texto para preview
@@ -654,34 +654,34 @@ class AutoTyperApp:
         self.total_sessions_label.config(text=str(self.typing_stats['total_sessions']))
         self.total_chars_label.config(text=f"{self.typing_stats['total_characters']:,}")
         self.total_time_label.config(text=self.format_time(self.typing_stats['total_time']))
-        self.avg_speed_label.config(text=f"{self.typing_stats['average_speed']:.1f} CPM")
-        self.best_speed_label.config(text=f"{self.typing_stats['best_speed']:.1f} CPM")
+        self.avg_speed_label.config(text=f"{self.typing_stats['average_speed']:.1f} letras por minuto")
+        self.best_speed_label.config(text=f"{self.typing_stats['best_speed']:.1f} letras por minuto")
 
     def show_chart(self):
         """Mostra gráfico de estatísticas"""
         if not self.typing_stats['sessions']:
-            messagebox.showinfo("Info", "Nenhuma sessão registrada ainda!")
+            messagebox.showinfo("Info", "Ainda não tem nada para mostrar! Use o app primeiro 😊")
             return
-        
+            
         # Janela de gráfico simples
         chart_window = tk.Toplevel(self.root)
-        chart_window.title("📈 Gráfico de Velocidade")
+        chart_window.title("📈 Sua Evolução")
         chart_window.geometry("600x400")
         
         # Texto simples com histórico
         chart_text = scrolledtext.ScrolledText(chart_window, wrap=tk.WORD, height=20)
         chart_text.pack(fill="both", expand=True, padx=10, pady=10)
         
-        chart_content = "📈 HISTÓRICO DE SESSÕES\n\n"
+        chart_content = "📈 SEU HISTÓRICO DE DIGITAÇÃO\n\n"
         for session in self.typing_stats['sessions'][-20:]:  # Últimas 20 sessões
-            chart_content += f"{session['date']} - {session['speed']:.1f} CPM ({session['characters']} chars)\n"
+            chart_content += f"{session['date']} - {session['speed']:.1f} letras/min ({session['characters']} letras)\n"
         
         chart_text.insert("1.0", chart_content)
         chart_text.config(state="disabled")
 
     def clear_stats(self):
         """Limpa todas as estatísticas"""
-        if messagebox.askyesno("Confirmar", "Deseja realmente limpar todas as estatísticas?"):
+        if messagebox.askyesno("Confirmar", "Tem certeza que quer apagar tudo? 😅"):
             self.typing_stats = {
                 'total_sessions': 0,
                 'total_characters': 0,
@@ -692,14 +692,14 @@ class AutoTyperApp:
             }
             self.save_stats()
             self.refresh_stats()
-            self.status_label.config(text="Estatísticas limpas")
+            self.status_label.config(text="Tudo apagado! Começando do zero 🆕")
 
     def create_status_bar(self, parent):
         """Cria barra de status"""
         self.status_frame = ttk.Frame(parent)
         self.status_frame.pack(fill="x", pady=(10, 0))
         
-        self.status_label = ttk.Label(self.status_frame, text="Pronto para digitar", 
+        self.status_label = ttk.Label(self.status_frame, text="Tudo pronto! Pode começar 😊", 
                                     relief="sunken", anchor="w")
         self.status_label.pack(fill="x")
 
@@ -779,7 +779,7 @@ class AutoTyperApp:
         """Limpa o texto da área de digitação"""
         self.text_area.delete("1.0", tk.END)
         self.update_char_count()
-        self.status_label.config(text="Texto limpo")
+        self.status_label.config(text="Texto apagado! Começando do zero 🆕")
 
     def update_history_list(self):
         """Atualiza lista do histórico"""
@@ -798,7 +798,7 @@ class AutoTyperApp:
             self.text_area.delete("1.0", tk.END)
             self.text_area.insert("1.0", text_info['text'])
             self.update_char_count()
-            self.status_label.config(text="Texto carregado do histórico")
+            self.status_label.config(text="Texto do histórico carregado! 😊")
 
     def remove_from_history(self):
         """Remove item selecionado do histórico"""
@@ -808,7 +808,7 @@ class AutoTyperApp:
             del self.config['last_texts'][index]
             self.save_config()
             self.update_history_list()
-            self.status_label.config(text="Item removido do histórico")
+            self.status_label.config(text="Texto removido do histórico! 🗑️")
 
     def add_to_history(self, text):
         """Adiciona texto ao histórico"""
@@ -826,14 +826,14 @@ class AutoTyperApp:
     def stop_typing_action(self):
         """Para a digitação em andamento"""
         self.stop_typing = True
-        self.status_label.config(text="Parando digitação...")
+        self.status_label.config(text="Parando tudo... ⏹️")
 
     def start_typing_thread(self):
         """
         Inicia o processo de digitação em uma nova thread para não travar a UI.
         """
         if self.is_typing:
-            messagebox.showwarning("Aviso", "Digitação já em andamento!")
+            messagebox.showwarning("Aviso", "Já está digitando! Espere terminar 😊")
             return
             
         try:
@@ -844,15 +844,15 @@ class AutoTyperApp:
 
             # Validações
             if not text_to_type:
-                messagebox.showerror("Erro", "A caixa de texto está vazia!")
+                messagebox.showerror("Ops!", "Esqueceu de digitar algo! 😅")
                 return
                 
             if start_delay < 0 or start_delay > 300:
-                messagebox.showerror("Erro", "Tempo de início deve estar entre 0 e 300 segundos!")
+                messagebox.showerror("Ei!", "O tempo de espera deve ser entre 0 e 300 segundos! 🤔")
                 return
                 
             if char_interval < 0.001 or char_interval > 10:
-                messagebox.showerror("Erro", "Intervalo entre teclas deve estar entre 0.001 e 10 segundos!")
+                messagebox.showerror("Ei!", "O intervalo entre letras deve ser entre 0.001 e 10 segundos! 🤔")
                 return
             
             # Salvar configurações atuais
@@ -875,7 +875,7 @@ class AutoTyperApp:
             typing_thread.start()
 
         except ValueError:
-            messagebox.showerror("Erro de Entrada", "Por favor, insira valores numéricos válidos para os tempos de espera.")
+            messagebox.showerror("Ops!", "Por favor, digite números válidos nos campos de tempo! 😊")
 
     def run_typing_logic(self, text, delay, interval, mode):
         """
@@ -886,7 +886,7 @@ class AutoTyperApp:
         start_time = time.time()
         
         # Atualizar interface
-        self.start_button.config(state="disabled", text=f"🚀 Iniciando em {int(delay)}s...")
+        self.start_button.config(state="disabled", text=f"🚀 Começando em {int(delay)}s...")
         self.stop_button.config(state="normal")
         self.progress_var.set(0)
         
@@ -896,7 +896,7 @@ class AutoTyperApp:
         # Verificar modo de teste
         test_mode = self.test_mode_var.get()
         if test_mode:
-            self.status_label.config(text="🧪 Modo de teste ativado - Simulação")
+            self.status_label.config(text="🧪 Modo de teste - Só simulando 😊")
         
         try:
             # Contagem regressiva com atualização da barra de progresso
@@ -908,8 +908,8 @@ class AutoTyperApp:
                     return
                     
                 mode_text = "🧪 TESTE" if test_mode else "⌨️ DIGITAÇÃO"
-                self.start_button.config(text=f"{mode_text} - Iniciando em {i}s...")
-                self.status_label.config(text=f"Iniciando em {i} segundos...")
+                self.start_button.config(text=f"{mode_text} - Começando em {i}s...")
+                self.status_label.config(text=f"Começando em {i} segundos... ⏰")
                 
                 # Atualizar progresso da contagem regressiva
                 countdown_progress = ((delay - i) / delay) * 30  # 30% para contagem
@@ -923,7 +923,7 @@ class AutoTyperApp:
                 
             mode_text = "🧪 Simulando..." if test_mode else "⌨️ Digitando..."
             self.start_button.config(text=mode_text)
-            self.status_label.config(text="Processando texto...")
+            self.status_label.config(text="Fazendo a mágica acontecer... ✨")
             
             # Digitação baseada no modo
             if mode == 'word':
@@ -975,21 +975,21 @@ class AutoTyperApp:
                 # Backup automático
                 self.auto_backup()
                 
-                success_text = "✅ Simulação concluída!" if test_mode else "✅ Texto digitado com sucesso!"
+                success_text = "✅ Simulação concluída!" if test_mode else "✅ Pronto! Texto no lugar certo! 🎉"
                 self.status_label.config(text=success_text)
                 messagebox.showinfo("Sucesso", success_text)
                 
         except pyautogui.FailSafeException:
-            self.status_label.config(text="⚠️ Interrompido pelo Fail-Safe")
-            messagebox.showwarning("Interrompido", "A automação foi interrompida pelo mecanismo de segurança (Fail-Safe).")
+            self.status_label.config(text="⚠️ Parou por segurança")
+            messagebox.showwarning("Parou!", "Você moveu o mouse para o canto superior esquerdo - parada de emergência ativada! 🛡️")
         except Exception as e:
-            self.status_label.config(text=f"❌ Erro: {str(e)}")
-            messagebox.showerror("Erro", f"Erro durante a digitação: {str(e)}")
+            self.status_label.config(text=f"❌ Ops! Algo deu errado: {str(e)}")
+            messagebox.showerror("Ops!", f"Algo deu errado durante a digitação: {str(e)} 😅")
         finally:
             # Reabilitar interface
             self.is_typing = False
             self.stop_typing = False
-            self.start_button.config(state="normal", text="🚀 INICIAR DIGITAÇÃO")
+            self.start_button.config(state="normal", text="🚀 Vamos começar!")
             self.stop_button.config(state="disabled")
             self.progress_var.set(0)
 
@@ -1008,10 +1008,10 @@ if __name__ == "__main__":
         
         # Configurar fechamento da janela
         def on_closing():
-            if app.is_typing:
-                if messagebox.askokcancel("Sair", "Digitação em andamento. Deseja realmente sair?"):
-                    app.stop_typing = True
-                    root.destroy()
+        if app.is_typing:
+            if messagebox.askokcancel("Sair", "Ainda está digitando! Quer mesmo sair? 😊"):
+                app.stop_typing = True
+                root.destroy()
             else:
                 root.destroy()
         
@@ -1019,4 +1019,4 @@ if __name__ == "__main__":
         root.mainloop()
         
     except Exception as e:
-        messagebox.showerror("Erro", f"Erro ao iniciar aplicação: {str(e)}")
+        messagebox.showerror("Ops!", f"Algo deu errado ao abrir o app: {str(e)} 😅")
